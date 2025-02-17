@@ -1,0 +1,425 @@
+/* PatientAssignmentForm.css */
+.patient-form-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(165deg, #ffffff 0%, #f0f7ff 100%);
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1),
+              0 5px 15px rgba(49, 130, 206, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(49, 130, 206, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.patient-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #3182ce, #63b3ed, #90cdf4);
+  animation: gradientMove 3s linear infinite;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  position: relative;
+  padding: 1rem;
+}
+
+.header-icon {
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, #3182ce 0%, #63b3ed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.2rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+.form-header h2 {
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.header-description {
+  color: #4a5568;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.underline {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #3182ce, #63b3ed);
+  margin: 0 auto;
+  border-radius: 4px;
+  animation: pulse 2s infinite;
+  position: relative;
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: shimmer 2s infinite;
+}
+
+.form-section {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-section:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #2d3748;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+  font-weight: 700;
+}
+
+.section-icon {
+  color: #3182ce;
+  font-size: 1.6rem;
+  animation: bounce 2s infinite;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.label-text {
+  display: block;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.form-group:hover .label-text {
+  color: #3182ce;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: white;
+  color: #2d3748;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.15);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: #63b3ed;
+  transform: translateY(-1px);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.indoor-fields {
+  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(49, 130, 206, 0.4);
+  background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .btn-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+.message {
+  margin-top: 2rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.success {
+  background-color: #c6f6d5;
+  color: #2f855a;
+  border-left: 4px solid #48bb78;
+}
+
+.error {
+  background-color: #fed7d7;
+  color: #c53030;
+  border-left: 4px solid #f56565;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; width: 120px; }
+  50% { opacity: 1; width: 140px; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .patient-form-container {
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .form-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .header-icon {
+    font-size: 3rem;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-form-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .form-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .header-icon {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .form-section {
+    padding: 1rem;
+  }
+
+  input,
+  select,
+  textarea,
+  .submit-btn {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+/* Updated Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .patient-form-container {
+    background: linear-gradient(165deg, #f8fafc 0%, #e2e8f0 100%);
+    border-color: rgba(49, 130, 206, 0.15);
+  }
+
+  .form-section {
+    background: #ffffff;
+    border-color: rgba(226, 232, 240, 0.8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .label-text {
+    color: #4a5568;
+  }
+
+  .section-title {
+    color: #2d3748;
+    border-bottom-color: #e2e8f0;
+  }
+
+  input,
+  select,
+  textarea {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    color: #2d3748;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.15);
+  }
+
+  .header-description {
+    color: #4a5568;
+  }
+
+  .form-header h2 {
+    background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .message.success {
+    background-color: #c6f6d5;
+    color: #2f855a;
+  }
+
+  .message.error {
+    background-color: #fed7d7;
+    color: #c53030;
+  }
+}
